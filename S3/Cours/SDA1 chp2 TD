@@ -1,0 +1,166 @@
+Exo sur les liste chaînée simple :
+
+ins,sup,chg => opération sur le ième élément. Les faire en utilisant la fonction adresseIème qui donnt l'adresse du ième.
+
+typedel struct strliste {S v;strliste * s;} Strliste, *Liste;
+S ième(Liste l, S i)
+{
+	int k;
+	lor(k=1;k<i;k++)
+	{
+		l=l->s;
+	}
+	return l->v;
+}
+
+Liste Listenouv()
+{
+	Liste l=NULL;
+	return l;
+}
+
+Liste adjt(Liste l, S x)
+{
+	Liste tete=MALLOC(StrListe);
+	tete->v=x;
+	tete->s=l;
+	l=tete;
+	return l;
+}
+
+Liste supt(Liste l)
+{
+	Liste temp=l->s;
+	lree(l);
+	l=temp;
+	return l;
+}
+
+bool vide(Liste l)
+{
+	return l==NULL;
+}
+
+Nat lgr(Liste l)
+{
+	int i=0;
+	while(l!=NULL)
+	{
+		l=l->s;
+		i++
+	}
+	return i;
+}
+
+bool app(Liste l,S x)
+{
+	bool resultat=0;
+	while(l!=NULL)
+	{
+	resultat = l->v == x;
+	l=l->s;
+	}
+	return resultat;
+}
+
+S tete(Liste l)
+{
+	return l->v;
+}
+/* pré: la liste doit au moins avoir un élément */
+Liste dernier(Liste l)
+{
+	while(l->s != NULL)
+	{
+		l=l->s;
+	}
+	return l;
+}
+/*La liste doit au moins avoir 2 éléments*/
+Liste avant_dernier(Liste l)
+{
+	while(l->s->s !=NULL) l=l->s;
+	return l;
+}
+
+S queue(Liste l)
+{
+	return dernier(l)->v;
+}
+
+Liste adjq(Liste l,s x)
+{
+	Liste add=MALLOC(Strliste);
+	add->v=x;
+	add->s=NULL;
+	dernier(l)->s=add;
+	return l;
+}
+
+Liste supq(Liste l)
+{
+	Liste tmp;
+	if(!(vide(l))
+	{
+	if(l->s==NULL)
+	{free(l);l=NULL;}
+	else
+	{
+	tmp=avant_dernier(l);
+	free(tmp->s);
+	tmp->=NULL;	
+	return l;
+}
+
+Liste adresseIeme(Liste l,int i)
+{
+	while((l!=NULL)&&(i>0))
+	{
+		l=l->s;
+	}
+	return l;
+}
+
+//0<i<=lgr(l)+1
+Liste ins(Liste l,Nat x,int i)
+{
+
+	if(vide(l) || (i==1))
+	{
+		l=adjt(l,x);
+	}
+	else
+	{
+	Liste new=MALLOC(Strliste);
+	new->v=x;
+	new->s=temp->s;
+	Liste temp=adresseIeme(l,i-1);
+	temp->s=new;
+	}
+	return l;
+}
+//Au moins un élément
+Liste sup(Liste l,int i)
+{
+	if(i==1)
+	{
+		l=supt(l)
+	}
+	else
+	{
+		Liste imoinsun=adresseIeme(l,i-1);
+		Liste temp=imoinsun->s->s;
+		free(imoinsun->s);
+		imoinsun->s=temp;
+	}
+	return l;
+}
+
+// 0<i<=lgr(l)
+Liste chg(Liste l,Nat x,int x)
+{
+	(adresseIeme(l,i))->v=x;
+	return l;
+}
+
+

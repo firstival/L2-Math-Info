@@ -1,0 +1,101 @@
+Arbres généraux Arbgene avec étiquettes dans S
+
+
+ge: S -> Arbgene // arbre réduit à une feuille
+i: Arbgene Arbgene Nat -> Arbgene //insertion d'un arbre comme kieme fils d'un autre
+
+fils:Arbgene Nat -> Arbgene //donnant le kième sous arbre
+ef:Arbgene -> Bool // testant si l'arbre est une feuilles
+rac:Arbgene -> S //racine
+nf: Arbgene -> Nat //nombre de fils
+nn: Arbgene -> Nat
+h: Arbgene -> Nat
+
+pré:
+fils(a,k)= 1<=k<=nf(a)
+Les fils sont contigues !
+
+1)Spécifier par rapport à ge et i
+2)on binarise donc nos arbres généraux sont des arbins (on spécifie par rapport au gén des arbin)
+3)Implantation à préparer pour TP lundi
+4)specifier prefixe et postfixe sur nos arbgene recursivement
+5)spécif prefixe et postfixe sur nos arbgen itération
+
+
+
+fils(i(ap,af,n),k)=si k=n alors af
+				sinon si j<k alors fils(a,j)
+				sinon fils(a,j-1)
+
+					
+ef(ge)=vrai
+ef(i(ap,af,k))=faux
+
+rac(ge(x))=x
+rac(i(ap,af,k))=rac(ap)
+
+nf(ge(x))=0
+nf(i(ap,af,k))=1+nf(ap)
+
+nn(ge(x))=1
+nn(i(ap,af,k))=nn(af)+nn(ap)
+
+h(ge(x))=0
+h(i(ap,af,k))=max(h(ap),1+h(af))
+
+2)Binarisation
+
+ge(x)=e(^,x,^)
+
+ef(e(g,x,d))=v(g)
+
+rac(e(g,x,d))=x
+
+i(e(g,x,d),e(a1,y,a2),k)=si k=1 alors e(e(a1,y,g),x,d)
+						sinon e(i'(g,e(a1,y,a2),k-1),x,d)
+						
+i' : insertion à droite
+i'(e(g,x,d),b,k)=si k=1 alors e(g,x,e(ag(b),r(b),d))
+				sinon e(g,x,i'(d,b,k-1)) fsi
+
+nf(^)=0
+nf(e(g,x,d)=nf_aux(g)
+	avec nf_aux(e(g,x,d)=1+nf(d)
+
+nn(^)=0
+nn(e(g,x,d))=1+nn(g)+nn(d)
+
+
+fils(e(g,x,d),k)=si k=1 alors g sinon fils_aux(g,k-1)
+	avec fils_aux(e(g,x,d),k)=si k=1 alors d
+							sinon fils(d,k-1)
+h(^)=0
+h(e(g,x,d))=max(h(g)+1,h(d))
+
+
+4)Parcours prefixe et postfixe avec une operation de parcours de tous les fils
+
+Arbin i(Arbin a,Arbin b,int k)
+{
+	if(k==1)
+	{
+		b->d=a->g;
+		a->g=b;
+	}
+	else
+	{
+		Arbin tmp=a->g;
+		k--;
+		while(k>1 && tmp->d!=NULL)
+		{
+			tmp=tmp->d;
+			k--;
+		}
+		b->d=tmp->d;
+		tmp->d=b;
+	}
+	return a;
+}
+
+prefixe=prefixe
+postfixe=infixe

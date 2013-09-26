@@ -1,0 +1,247 @@
+\hypertarget{structStrMatrice}{
+\section{StrMatrice Struct Reference}
+\label{structStrMatrice}\index{StrMatrice@{StrMatrice}}
+}
+
+
+{\ttfamily \#include $<$matrice.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structStrMatrice}{Matrice} \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc} (int \hyperlink{structStrMatrice_a2ff616d8e04d6f7b9ea46d70a239fbcc}{h}, int \hyperlink{structStrMatrice_a3f73a35bfec6fce9ec97d4862371c1b2}{l})
+\item 
+void \hyperlink{structStrMatrice_a0e27d4a36ad549186269ce6f56195b3d}{MatFree} (\hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{matrice_8h_a253b248072cfc8bd812c69acd0046eed}{Bool} \hyperlink{structStrMatrice_a04014756edd74cc52800a506863981a8}{MatVal} (\hyperlink{structStrMatrice}{Matrice} m, \hyperlink{structCouple}{Couple} c)
+\item 
+\hyperlink{structStrMatrice}{Matrice} \hyperlink{structStrMatrice_ab24452b9008d3b07f3c77e6e0f3be54d}{MatSet} (\hyperlink{structStrMatrice}{Matrice} m, \hyperlink{structCouple}{Couple} c, \hyperlink{matrice_8h_a253b248072cfc8bd812c69acd0046eed}{Bool} val)
+\item 
+int \hyperlink{structStrMatrice_a873bc95fcfa940a36b775a60b53c5475}{CompteTrue} (\hyperlink{structStrMatrice}{Matrice} m)
+\item 
+int \hyperlink{structStrMatrice_a72f035ab94d8786c570242d7e51a2125}{MatSauve} (\hyperlink{structStrMatrice}{Matrice} m, char $\ast$nom\_\-fichier)
+\item 
+\hyperlink{structStrMatrice}{Matrice} \hyperlink{structStrMatrice_aef99ab1c4c331b4c3b421276ad967be0}{MatLit} (char $\ast$fichier)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{matrice_8h_a253b248072cfc8bd812c69acd0046eed}{Bool} $\ast$$\ast$ \hyperlink{structStrMatrice_a9500c8a6adfdbed1824d36b547a5eb56}{tab}
+\item 
+int \hyperlink{structStrMatrice_a2ff616d8e04d6f7b9ea46d70a239fbcc}{h}
+\item 
+int \hyperlink{structStrMatrice_a3f73a35bfec6fce9ec97d4862371c1b2}{l}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure Matrice 
+
+\subsection{Member Function Documentation}
+\hypertarget{structStrMatrice_a873bc95fcfa940a36b775a60b53c5475}{
+\index{StrMatrice@{StrMatrice}!CompteTrue@{CompteTrue}}
+\index{CompteTrue@{CompteTrue}!StrMatrice@{StrMatrice}}
+\subsubsection[{CompteTrue}]{\setlength{\rightskip}{0pt plus 5cm}int CompteTrue (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_a873bc95fcfa940a36b775a60b53c5475}
+Compte le nombre de mur d'un labyrinthe 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice dont on va compter les murs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le nombre de mur de {\itshape m\/} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+m!=NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{
+\index{StrMatrice@{StrMatrice}!MatAlloc@{MatAlloc}}
+\index{MatAlloc@{MatAlloc}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatAlloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} MatAlloc (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_a413b83de8fe4333288b15d13e471e251}
+Création d'une nouvelle matrice {\itshape h\/} $\ast${\itshape l\/} initialisé à False 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em h} & : int, la hauteur de la matrice \\
+\hline
+\mbox{\tt in}  & {\em l} & : int, la largeur de la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une Matrice, pointeur sur la \hyperlink{structStrMatrice}{StrMatrice} alloué 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+0$<$l , 0$<$h 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+un table h$\ast$l a été alloué 
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_a0e27d4a36ad549186269ce6f56195b3d}{
+\index{StrMatrice@{StrMatrice}!MatFree@{MatFree}}
+\index{MatFree@{MatFree}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatFree}]{\setlength{\rightskip}{0pt plus 5cm}void MatFree (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_a0e27d4a36ad549186269ce6f56195b3d}
+Libération de la mémoire utilisé par la matrice 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\itshape m\/} ne doit plus être utilisé, car il a été désalloué 
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_aef99ab1c4c331b4c3b421276ad967be0}{
+\index{StrMatrice@{StrMatrice}!MatLit@{MatLit}}
+\index{MatLit@{MatLit}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatLit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} MatLit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_aef99ab1c4c331b4c3b421276ad967be0}
+Lit une matrice depuis un fichier 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nom\_\-fichier} & : char $\ast$, nom du fichier duquel on va lire la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une matrice créée depuis le fichier {\itshape nom\_\-fichier\/} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+nom\_\-fichier != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Allocation d'une matrice depuis le fichier {\itshape nom\_\-fichier\/} 
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_a72f035ab94d8786c570242d7e51a2125}{
+\index{StrMatrice@{StrMatrice}!MatSauve@{MatSauve}}
+\index{MatSauve@{MatSauve}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatSauve}]{\setlength{\rightskip}{0pt plus 5cm}int MatSauve (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{char $\ast$}]{nom\_\-fichier}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_a72f035ab94d8786c570242d7e51a2125}
+Enregistre une matrice dans un fichier, attention, si on lui donne le même nom à chaque fois, il ecrasera ce fichier pour ecrire le nouveau 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice à enregistrer \\
+\hline
+\mbox{\tt in}  & {\em nom\_\-fichier} & : char $\ast$, nom du fichier sous lequel on va enregistrer la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l'enregistrement s'est bien passé, 0 sinon 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+m!=NULL 
+
+nom\_\-fichier != NULL 
+
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la matrice a été sauvegardé dans le fichier {\itshape nom\_\-fichier\/} 
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_ab24452b9008d3b07f3c77e6e0f3be54d}{
+\index{StrMatrice@{StrMatrice}!MatSet@{MatSet}}
+\index{MatSet@{MatSet}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatSet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} MatSet (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{{\bf Couple}}]{c, }
+\item[{{\bf Bool}}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_ab24452b9008d3b07f3c77e6e0f3be54d}
+Stocke une valeur booléenne dans la matrice aux coordonnées données par le \hyperlink{structCouple}{Couple} passé en argument 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordoonnées de la case à modifier \\
+\hline
+\mbox{\tt in}  & {\em val} & : Bool, la valeur booléenne à stocker \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la matrice dont on a changé la case (c.x,c.y) pour {\itshape val\/} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+0$<$=c.x$<$ m-\/$>$l 
+
+0$<$=c.y$<$ m-\/$>$h 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+m-\/$>$tab\mbox{[}c.x\mbox{]}\mbox{[}c.y\mbox{]} a changé 
+\end{DoxyPostcond}
+\hypertarget{structStrMatrice_a04014756edd74cc52800a506863981a8}{
+\index{StrMatrice@{StrMatrice}!MatVal@{MatVal}}
+\index{MatVal@{MatVal}!StrMatrice@{StrMatrice}}
+\subsubsection[{MatVal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} MatVal (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{structStrMatrice_a04014756edd74cc52800a506863981a8}
+Renvoie la valeur booléenne de la matrice aux coordonnées passé par le \hyperlink{structCouple}{Couple} en argument 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordoonné de la case à évaluer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False ou True, selon la valeur contenant dans la matrice 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+0$<$=c.x$<$ m-\/$>$l 
+
+0$<$=c.y$<$ m-\/$>$h 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structStrMatrice_a2ff616d8e04d6f7b9ea46d70a239fbcc}{
+\index{StrMatrice@{StrMatrice}!h@{h}}
+\index{h@{h}!StrMatrice@{StrMatrice}}
+\subsubsection[{h}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf StrMatrice::h}}}
+\label{structStrMatrice_a2ff616d8e04d6f7b9ea46d70a239fbcc}
+hauteur de la matrice \hypertarget{structStrMatrice_a3f73a35bfec6fce9ec97d4862371c1b2}{
+\index{StrMatrice@{StrMatrice}!l@{l}}
+\index{l@{l}!StrMatrice@{StrMatrice}}
+\subsubsection[{l}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf StrMatrice::l}}}
+\label{structStrMatrice_a3f73a35bfec6fce9ec97d4862371c1b2}
+largeur de la matrice \hypertarget{structStrMatrice_a9500c8a6adfdbed1824d36b547a5eb56}{
+\index{StrMatrice@{StrMatrice}!tab@{tab}}
+\index{tab@{tab}!StrMatrice@{StrMatrice}}
+\subsubsection[{tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool}$\ast$$\ast$ {\bf StrMatrice::tab}}}
+\label{structStrMatrice_a9500c8a6adfdbed1824d36b547a5eb56}
+pointeur de pointeur, qui pointera sur le tableau de tableau qui représente la matrice 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{matrice_8h}{matrice.h}\end{DoxyCompactItemize}

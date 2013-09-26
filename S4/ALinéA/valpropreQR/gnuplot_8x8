@@ -1,0 +1,66 @@
+set xr [-1:8]
+set yr [-1:8]
+plot 'matrice_8x8' index 0
+pause -1
+plot 'matrice_8x8' index 1
+pause -1
+plot 'matrice_8x8' index 2
+pause -1
+plot 'matrice_8x8' index 3
+pause -1
+plot 'matrice_8x8' index 4
+pause -1
+plot 'matrice_8x8' index 5
+pause -1
+plot 'matrice_8x8' index 6
+pause -1
+plot 'matrice_8x8' index 7
+pause -1
+plot 'matrice_8x8' index 8
+pause -1
+plot 'matrice_8x8' index 9
+pause -1
+plot 'matrice_8x8' index 10
+pause -1
+plot 'matrice_8x8' index 11
+pause -1
+plot 'matrice_8x8' index 12
+pause -1
+plot 'matrice_8x8' index 13
+pause -1
+plot 'matrice_8x8' index 14
+pause -1
+plot 'matrice_8x8' index 15
+pause -1
+plot 'matrice_8x8' index 16
+pause -1
+plot 'matrice_8x8' index 17
+pause -1
+plot 'matrice_8x8' index 18
+pause -1
+plot 'matrice_8x8' index 19
+pause -1
+plot 'matrice_8x8' index 20
+pause -1
+plot 'matrice_8x8' index 21
+pause -1
+plot 'matrice_8x8' index 22
+pause -1
+plot 'matrice_8x8' index 23
+pause -1
+plot 'matrice_8x8' index 24
+pause -1
+plot 'matrice_8x8' index 25
+pause -1
+plot 'matrice_8x8' index 26
+pause -1
+plot 'matrice_8x8' index 27
+pause -1
+plot 'matrice_8x8' index 28
+pause -1
+plot 'matrice_8x8' index 29
+pause -1
+plot 'matrice_8x8' index 30
+pause -1
+plot 'matrice_8x8' index 31
+pause -1

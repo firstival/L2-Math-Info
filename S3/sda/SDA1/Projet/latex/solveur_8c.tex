@@ -1,0 +1,287 @@
+\hypertarget{solveur_8c}{
+\section{solveur.c File Reference}
+\label{solveur_8c}\index{solveur.c@{solveur.c}}
+}
+{\ttfamily \#include \char`\"{}solveur.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{solveur_8c_ac47e37ba1ea269435fe09f8906eac0d1}{taillePixel} (int h, int l)
+\item 
+\hyperlink{structStrMatrice}{Matrice} \hyperlink{solveur_8c_a2e9e785106347045aafb7886256302b3}{debut\_\-recherche\_\-naif} (\hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structCouple}{Couple} \hyperlink{solveur_8c_adc7a6d2267078fd3869eafe7aa97b8de}{choisirchemin\_\-A} (\hyperlink{structStrEns}{Ens} parcours, \hyperlink{structStrEns}{Ens} dejavu, \hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structCouple}{Couple} \hyperlink{solveur_8c_aea80635e3def810a418698a78ca1923c}{choisirchemin\_\-B} (\hyperlink{structStrEns}{Ens} parcours, \hyperlink{structStrEns}{Ens} dejavu, \hyperlink{structStrMatrice}{Matrice} m)
+\item 
+void \hyperlink{solveur_8c_ac77188040bffaa92add3eb2d627edf3f}{DessineEns} (\hyperlink{structStrEns}{Ens} e, long couleur)
+\item 
+void \hyperlink{solveur_8c_afe8eb112b9afc8d7fda17b11bf15c443}{DessineCouple} (\hyperlink{structCouple}{Couple} c, long couleur)
+\item 
+void \hyperlink{solveur_8c_a0432a57614bac91cda82d86f805eb219}{DessineLab} (\hyperlink{structStrMatrice}{Matrice} m, long couleur)
+\item 
+void \hyperlink{solveur_8c_a43eefca380c6cfcdcf604fa07a203d21}{EffaceCouple} (\hyperlink{structCouple}{Couple} c)
+\item 
+void \hyperlink{solveur_8c_a95e14956cad412a20669f0ce3ecc19c0}{EffaceEns} (\hyperlink{structStrEns}{Ens} e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solveur : Source 
+
+\subsection{Function Documentation}
+\hypertarget{solveur_8c_adc7a6d2267078fd3869eafe7aa97b8de}{
+\index{solveur.c@{solveur.c}!choisirchemin\_\-A@{choisirchemin\_\-A}}
+\index{choisirchemin\_\-A@{choisirchemin\_\-A}!solveur.c@{solveur.c}}
+\subsubsection[{choisirchemin\_\-A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couple} choisirchemin\_\-A (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{parcours, }
+\item[{{\bf Ens}}]{dejavu, }
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_adc7a6d2267078fd3869eafe7aa97b8de}
+Première manière de choisir quel chemin prendre : regarde la case où l'on se trouve, et applique une préférence quant à la direction à prendre(si l'on ne vient pas de cette direction,et qu'il n'y a pas de mur): droite,puis bas,puis haut,puis gauche 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parcours} & : Ens, l'ensemble qui contient le parcours(Cad, le cheminement sans le retour depuis des culs de sac) \\
+\hline
+\mbox{\tt in}  & {\em dejavu} & : Ens, l'ensemble de toute les cases qu'on a déja vu(sur lesquelles ont est déjà passées) \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice du labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un \hyperlink{structCouple}{Couple}, qui indique dans quel direction l'algorithme doit aller(contient un vecteur direction : exemple (0,1) correspond au bas) 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+parcours doit avoir au moins un élément, et m doit contenir un labyrinthe conforme 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_aea80635e3def810a418698a78ca1923c}{
+\index{solveur.c@{solveur.c}!choisirchemin\_\-B@{choisirchemin\_\-B}}
+\index{choisirchemin\_\-B@{choisirchemin\_\-B}!solveur.c@{solveur.c}}
+\subsubsection[{choisirchemin\_\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couple} choisirchemin\_\-B (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{parcours, }
+\item[{{\bf Ens}}]{dejavu, }
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_aea80635e3def810a418698a78ca1923c}
+Deuxième manière de choisir le chemin à prendre : regarde depuis case où l'on se trouve les chemins possiblement prenable (c'est à dire pas là d'où on vient, ni la où on est déjà aller) et tire au hasard un de ces chemins 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parcours} & : Ens, l'ensemble qui contient le parcours(Cad, le cheminement sans le retour depuis des culs de sac) \\
+\hline
+\mbox{\tt in}  & {\em dejavu} & : Ens, l'ensemble de toute les cases qu'on a déja vu(sur lesquelles ont est déjà passées) \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice du labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un \hyperlink{structCouple}{Couple}, qui indique dans quel direction l'algorithme doit aller(contient un vecteur direction : exemple (0,1) correspond au bas) 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+parcours doit avoir au moins un élément, et m doit contenir un labyrinthe conforme 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_a2e9e785106347045aafb7886256302b3}{
+\index{solveur.c@{solveur.c}!debut\_\-recherche\_\-naif@{debut\_\-recherche\_\-naif}}
+\index{debut\_\-recherche\_\-naif@{debut\_\-recherche\_\-naif}!solveur.c@{solveur.c}}
+\subsubsection[{debut\_\-recherche\_\-naif}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} debut\_\-recherche\_\-naif (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_a2e9e785106347045aafb7886256302b3}
+Boucle principale du programme de recherche de chemin 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, le pointeur de la \hyperlink{structStrMatrice}{StrMatrice} du labyrinthe dont on doit chercher le chemin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le pointeur passé en parametre 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+m doit avoir été initialisé et doit contenir un véritable labyrinthe 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Affichage de la recherche (si activé) 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_afe8eb112b9afc8d7fda17b11bf15c443}{
+\index{solveur.c@{solveur.c}!DessineCouple@{DessineCouple}}
+\index{DessineCouple@{DessineCouple}!solveur.c@{solveur.c}}
+\subsubsection[{DessineCouple}]{\setlength{\rightskip}{0pt plus 5cm}void DessineCouple (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_afe8eb112b9afc8d7fda17b11bf15c443}
+Dessine un couple dans la couleur indiqué 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordonnée de la case à dessiner \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel on doit dessiner la case \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+le couple doit appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la couleur de la case dont les coordonnées sont ceux de {\itshape c\/} a changé pour la couleur en parametre 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_ac77188040bffaa92add3eb2d627edf3f}{
+\index{solveur.c@{solveur.c}!DessineEns@{DessineEns}}
+\index{DessineEns@{DessineEns}!solveur.c@{solveur.c}}
+\subsubsection[{DessineEns}]{\setlength{\rightskip}{0pt plus 5cm}void DessineEns (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{e, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_ac77188040bffaa92add3eb2d627edf3f}
+Dessine tout les couples contenu dans l'ensemble donné en parametre, dans la couleur passé en parametre 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e} & : Ens, un ensemble de couple \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, un couleur créée par la fonction newcolor() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+les couples de l'ensemble doivent appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+les cases dont les coordonnées sont ceux des couples contenu dans {\itshape e\/} sont dessinées dans la conleur donnée 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_a0432a57614bac91cda82d86f805eb219}{
+\index{solveur.c@{solveur.c}!DessineLab@{DessineLab}}
+\index{DessineLab@{DessineLab}!solveur.c@{solveur.c}}
+\subsubsection[{DessineLab}]{\setlength{\rightskip}{0pt plus 5cm}void DessineLab (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_a0432a57614bac91cda82d86f805eb219}
+Parcours et dessine les murs d'un labyrinthe dans la couleur indiquée 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe à dessiner \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel les murs seront dessiner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Le labyrinthe a été dessiné 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_a43eefca380c6cfcdcf604fa07a203d21}{
+\index{solveur.c@{solveur.c}!EffaceCouple@{EffaceCouple}}
+\index{EffaceCouple@{EffaceCouple}!solveur.c@{solveur.c}}
+\subsubsection[{EffaceCouple}]{\setlength{\rightskip}{0pt plus 5cm}void EffaceCouple (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_a43eefca380c6cfcdcf604fa07a203d21}
+Efface un couple de l'affichage graphique(c'est à dire le redessine en blanc) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordonnée de la case à dessiner \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel on doit dessiner la case \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+le couple doit appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la couleur de la case dont les coordonnées sont ceux de {\itshape c\/} a changé pour la couleur en parametre 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_a95e14956cad412a20669f0ce3ecc19c0}{
+\index{solveur.c@{solveur.c}!EffaceEns@{EffaceEns}}
+\index{EffaceEns@{EffaceEns}!solveur.c@{solveur.c}}
+\subsubsection[{EffaceEns}]{\setlength{\rightskip}{0pt plus 5cm}void EffaceEns (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{e}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_a95e14956cad412a20669f0ce3ecc19c0}
+Efface tout les couples de l'ensemble de l'affichage graphique(c'est à dire les redessiner en blanc) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e} & : Ens, un ensemble de couple \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, un couleur créée par la fonction newcolor() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+les couples de l'ensemble doivent appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+les cases dont les coordonnées sont ceux des couples contenu dans {\itshape e\/} sont dessinées dans la conleur donnée 
+\end{DoxyPostcond}
+\hypertarget{solveur_8c_ac47e37ba1ea269435fe09f8906eac0d1}{
+\index{solveur.c@{solveur.c}!taillePixel@{taillePixel}}
+\index{taillePixel@{taillePixel}!solveur.c@{solveur.c}}
+\subsubsection[{taillePixel}]{\setlength{\rightskip}{0pt plus 5cm}int taillePixel (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}
+\label{solveur_8c_ac47e37ba1ea269435fe09f8906eac0d1}
+Calcule un taille de pixel adequat en fonction de la hauteur et largeur de la matrice à afficher 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em l} & : entier, la largeur de la matrice à afficher \\
+\hline
+\mbox{\tt in}  & {\em h} & : entier, la hauteur de la matrice à afficher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un entier, la taille du pixel pour l'affichage de la matrice 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+l$>$0 
+
+h$>$0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}

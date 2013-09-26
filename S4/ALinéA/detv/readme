@@ -1,0 +1,12 @@
+TP2 d'Algèbre Linéaire Appliquée :
+
+Pour tester les fonctions, lancez exempleTP, ce programme créera une matrice 2x2 et 3x3 au hasard, puis calculera le déterminant des deux matrices avec la méthode récursive, ou pas triangularisation.
+Puis il calculera la solution d'un système (toujours le même), et affichera cette solution.
+On vous proposera alors de chercher un déterminant pour une matrice que VOUS donnerez, à vous de choisir si vous le voulez ou non.
+
+
+detv quant à lui est utilisable de cette manière : "detv taille_minimum incrément nombre_matrice nom_fichier_output".
+detv lancé avec ces options créera donc deux processus fils qui calculeront de manières différentes(mentionner en haut), le déterminant de matrice NxN avec N qui commence avec la taille_minimum et s'incrémente avec "incrément", jusqu'à avoir calculer nombre_matrice de matrice.
+Les processus fils écrivent alors sur nom_fichier_rec et nom_fichier_ech le temps d'exéction en face de la taille de la matrice.
+
+

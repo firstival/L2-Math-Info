@@ -1,0 +1,2 @@
+type expr_arith = Val of int | Add of expr_arith * expr_arith | Mult of expr_arith * expr_arith;;
+

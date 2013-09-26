@@ -1,0 +1,9 @@
+J'ai considéré que :
+-une grille vide/totalement morte (même s'il reste des cases non viables) n'est pas oscillante, elle est simplement morte et je distingue ce cas.
+-à l'exemple de la grille4, une grille qui commence avec des cellules à l'age 1,puis on active le vieillessement, et on lance le teste, la grille est oscillante, même si "periode" fois plus tard, elle a des ages différents de 1(donc du cas de base)
+Une grille comme ça est considéré oscillante car elle ne perd pas de la vie petit à petit (ce qui conduirait à la mort de la grille), et garde le meme motif periode après periode, elle est donc oscillante
+-Une grille perdant de la vie petit à petit n'est pas considéré oscillante, car on ne peut pas appliqué autant de fois la periode qu'on veut, et toujours retrouver la forme de la colonie que l'on voulait.
+Ce cas est distingué : il est indiqué dans l'affichage du résultat du test que la colonnie est mourrante(donnant à une grille morte), et qu'il lui reste "x" evolution
+
+Mon maximum de tour de boucle est de 100 car j'ai estimé approximativement que les grilles que l'on avait pour tester notre programme ne devaient pas dépasser au grand maximum 50 de periode (en prenant large), du coup j'ai mis 100
+pour ajouter un peu de leste au cas où.

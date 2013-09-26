@@ -1,0 +1,439 @@
+\hypertarget{constructeur_8h}{
+\section{constructeur.h File Reference}
+\label{constructeur_8h}\index{constructeur.h@{constructeur.h}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$time.h$>$}\par
+{\ttfamily \#include \char`\"{}sorte.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ensemble.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}matrice.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}graph.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{constructeur_8h_ab42e84239d08647291f8bb79633075dc}{
+\#define {\bfseries INTER}~20}
+\label{constructeur_8h_ab42e84239d08647291f8bb79633075dc}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{constructeur_8h_ac47e37ba1ea269435fe09f8906eac0d1}{taillePixel} (int h, int l)
+\item 
+\hyperlink{structStrMatrice}{Matrice} \hyperlink{constructeur_8h_a953dfa9c5c853413058e5b83d4bdad9f}{debut\_\-generation} (\hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{constructeur_8h_ab2aa0ecaa88823a6b60c7cbecfc6927d}{emmurement} (\hyperlink{structStrMatrice}{Matrice} m, \hyperlink{structStrEns}{Ens} e)
+\item 
+\hyperlink{structCouple}{Couple} \hyperlink{constructeur_8h_ac9aa06d17dafec5fd67efc38aa7e9e4b}{recherche\_\-seed\_\-mur\_\-constructible} (\hyperlink{structStrMatrice}{Matrice} m, \hyperlink{structCouple}{Couple} c)
+\item 
+int \hyperlink{constructeur_8h_ae249aed709f5a92df49e732dad809c2b}{EstConstructible} (\hyperlink{structStrMatrice}{Matrice} m, \hyperlink{structCouple}{Couple} c)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{constructeur_8h_abdf45d88543ba22c44470cea0d2a9b28}{initEns\_\-seed} (\hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{constructeur_8h_af6af3cb1a786927c3505aced10d06c8c}{initEns\_\-murConstructible} (\hyperlink{structStrEns}{Ens} e, \hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{constructeur_8h_ad1774e83ad3d86615df41fa9860589ba}{SupprMurPlusConstructible} (\hyperlink{structCouple}{Couple} c, \hyperlink{structStrEns}{Ens} emc, \hyperlink{structStrMatrice}{Matrice} m)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{constructeur_8h_a4064df8f7345d0c94ff8c6aa88058aec}{AjoutNouveauxMursConstructibles} (\hyperlink{structCouple}{Couple} c, \hyperlink{structStrEns}{Ens} emc, \hyperlink{structStrMatrice}{Matrice} m, long couleur)
+\item 
+void \hyperlink{constructeur_8h_ac77188040bffaa92add3eb2d627edf3f}{DessineEns} (\hyperlink{structStrEns}{Ens} e, long couleur)
+\item 
+void \hyperlink{constructeur_8h_afe8eb112b9afc8d7fda17b11bf15c443}{DessineCouple} (\hyperlink{structCouple}{Couple} c, long couleur)
+\item 
+void \hyperlink{constructeur_8h_a95e14956cad412a20669f0ce3ecc19c0}{EffaceEns} (\hyperlink{structStrEns}{Ens} e)
+\item 
+void \hyperlink{constructeur_8h_a43eefca380c6cfcdcf604fa07a203d21}{EffaceCouple} (\hyperlink{structCouple}{Couple} c)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{constructeur_8h_a4a58de799d3d478dd05128271fc1e0bc}{
+int {\bfseries TAILLE\_\-PIXEL}}
+\label{constructeur_8h_a4a58de799d3d478dd05128271fc1e0bc}
+
+\item 
+\hypertarget{constructeur_8h_ac66ee0f26a3d20f0ef4eaa1c04fa9636}{
+int {\bfseries affichage\_\-generation}}
+\label{constructeur_8h_ac66ee0f26a3d20f0ef4eaa1c04fa9636}
+
+\item 
+\hypertarget{constructeur_8h_a788b8b85a54bc70cbf9b993433e7bd0f}{
+int {\bfseries affichage\_\-cases\_\-constructibles}}
+\label{constructeur_8h_a788b8b85a54bc70cbf9b993433e7bd0f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructeur : Header 
+
+\subsection{Function Documentation}
+\hypertarget{constructeur_8h_a4064df8f7345d0c94ff8c6aa88058aec}{
+\index{constructeur.h@{constructeur.h}!AjoutNouveauxMursConstructibles@{AjoutNouveauxMursConstructibles}}
+\index{AjoutNouveauxMursConstructibles@{AjoutNouveauxMursConstructibles}!constructeur.h@{constructeur.h}}
+\subsubsection[{AjoutNouveauxMursConstructibles}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} AjoutNouveauxMursConstructibles (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c, }
+\item[{{\bf Ens}}]{emc, }
+\item[{{\bf Matrice}}]{m, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_a4064df8f7345d0c94ff8c6aa88058aec}
+Ajoute les murs constructibles générées par un mur nouvellement construit à l'ensemble des murs constructibles, dessine(si affichage activé) ces murs de la couleur passé en parametre 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, les coordonnées de mur nouvellement construit \\
+\hline
+\mbox{\tt in}  & {\em emc} & : Ens, ensemble de murs constructibles \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe en construction \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel on doit afficher les nouvelles cases constructibles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ensemble des murs constructibles mis à jour 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initalisée par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+
+{\itshape emc\/} doit avoir été initialisée par \hyperlink{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{EnsAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\itshape emc\/} a été mis à jour avec les nouveaux murs constructibles générés par {\itshape c\/} 
+
+Affiche les nouveaux mur constructibles dans la couleur passé en paramètre(si l'affichage est activé) 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_a953dfa9c5c853413058e5b83d4bdad9f}{
+\index{constructeur.h@{constructeur.h}!debut\_\-generation@{debut\_\-generation}}
+\index{debut\_\-generation@{debut\_\-generation}!constructeur.h@{constructeur.h}}
+\subsubsection[{debut\_\-generation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} debut\_\-generation (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_a953dfa9c5c853413058e5b83d4bdad9f}
+Boucle principale de la construction : construit des murs de l'ensemble de mur constructible tant qu'il y en a 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice dans laquel on va construire le labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m, la matrice construite du labyrinthe 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+m doit avoir été initialisé par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la matrice est labyrinthe,les murs sont des \char`\"{}True\char`\"{}, le reste est \char`\"{}False\char`\"{} 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_afe8eb112b9afc8d7fda17b11bf15c443}{
+\index{constructeur.h@{constructeur.h}!DessineCouple@{DessineCouple}}
+\index{DessineCouple@{DessineCouple}!constructeur.h@{constructeur.h}}
+\subsubsection[{DessineCouple}]{\setlength{\rightskip}{0pt plus 5cm}void DessineCouple (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_afe8eb112b9afc8d7fda17b11bf15c443}
+Dessine un couple dans la couleur indiqué 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordonnée de la case à dessiner \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel on doit dessiner la case \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+le couple doit appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la couleur de la case dont les coordonnées sont ceux de {\itshape c\/} a changé pour la couleur en parametre 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ac77188040bffaa92add3eb2d627edf3f}{
+\index{constructeur.h@{constructeur.h}!DessineEns@{DessineEns}}
+\index{DessineEns@{DessineEns}!constructeur.h@{constructeur.h}}
+\subsubsection[{DessineEns}]{\setlength{\rightskip}{0pt plus 5cm}void DessineEns (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{e, }
+\item[{long}]{couleur}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ac77188040bffaa92add3eb2d627edf3f}
+Dessine tout les couples contenu dans l'ensemble donné en parametre, dans la couleur passé en parametre 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e} & : Ens, un ensemble de couple \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, un couleur créée par la fonction newcolor() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+les couples de l'ensemble doivent appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+les cases dont les coordonnées sont ceux des couples contenu dans {\itshape e\/} sont dessinées dans la conleur donnée 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_a43eefca380c6cfcdcf604fa07a203d21}{
+\index{constructeur.h@{constructeur.h}!EffaceCouple@{EffaceCouple}}
+\index{EffaceCouple@{EffaceCouple}!constructeur.h@{constructeur.h}}
+\subsubsection[{EffaceCouple}]{\setlength{\rightskip}{0pt plus 5cm}void EffaceCouple (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_a43eefca380c6cfcdcf604fa07a203d21}
+Efface un couple de l'affichage graphique(c'est à dire le redessine en blanc) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordonnée de la case à dessiner \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, couleur dans laquel on doit dessiner la case \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+le couple doit appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+la couleur de la case dont les coordonnées sont ceux de {\itshape c\/} a changé pour la couleur en parametre 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_a95e14956cad412a20669f0ce3ecc19c0}{
+\index{constructeur.h@{constructeur.h}!EffaceEns@{EffaceEns}}
+\index{EffaceEns@{EffaceEns}!constructeur.h@{constructeur.h}}
+\subsubsection[{EffaceEns}]{\setlength{\rightskip}{0pt plus 5cm}void EffaceEns (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{e}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_a95e14956cad412a20669f0ce3ecc19c0}
+Efface tout les couples de l'ensemble de l'affichage graphique(c'est à dire les redessiner en blanc) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e} & : Ens, un ensemble de couple \\
+\hline
+\mbox{\tt in}  & {\em couleur} & : long, un couleur créée par la fonction newcolor() \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+les couples de l'ensemble doivent appartenir à la matrice (pas de dépassement de largeur/hauteur) 
+
+couleur doit avoir été créé par newcolor() 
+
+initgraph() doit avoir été appelé avant 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+les cases dont les coordonnées sont ceux des couples contenu dans {\itshape e\/} sont dessinées dans la conleur donnée 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ab2aa0ecaa88823a6b60c7cbecfc6927d}{
+\index{constructeur.h@{constructeur.h}!emmurement@{emmurement}}
+\index{emmurement@{emmurement}!constructeur.h@{constructeur.h}}
+\subsubsection[{emmurement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} emmurement (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{{\bf Ens}}]{e}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ab2aa0ecaa88823a6b60c7cbecfc6927d}
+Construit des murs \char`\"{}True\char`\"{} sur les contours de la matrice 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, matrice sur laquel on va poser les murs autours \\
+\hline
+\mbox{\tt in}  & {\em e} & : Ens, Un ensemble de mur dans lequel on va stocker les coordonnées des murs que l'on va construire \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape e\/}, qui contient alors les coordonnées des murs que la fonction à construit 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initalisée par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+
+{\itshape e\/} doit avoir été initialisée par \hyperlink{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{EnsAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+les contours de {\itshape m\/} ont été changé à \char`\"{}True\char`\"{} 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ae249aed709f5a92df49e732dad809c2b}{
+\index{constructeur.h@{constructeur.h}!EstConstructible@{EstConstructible}}
+\index{EstConstructible@{EstConstructible}!constructeur.h@{constructeur.h}}
+\subsubsection[{EstConstructible}]{\setlength{\rightskip}{0pt plus 5cm}int EstConstructible (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ae249aed709f5a92df49e732dad809c2b}
+Teste si une case est constructible 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, coordonnée de la case à tester \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe en construction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un entier, 0 si {\itshape c\/} n'est pas constructible, 1 si elle est constructible 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initialisé par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_af6af3cb1a786927c3505aced10d06c8c}{
+\index{constructeur.h@{constructeur.h}!initEns\_\-murConstructible@{initEns\_\-murConstructible}}
+\index{initEns\_\-murConstructible@{initEns\_\-murConstructible}!constructeur.h@{constructeur.h}}
+\subsubsection[{initEns\_\-murConstructible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} initEns\_\-murConstructible (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{e, }
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_af6af3cb1a786927c3505aced10d06c8c}
+Initialise un ensemble de mur constructible à partir d'un ensemble de graine 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em e} & : Ens, ensemble de graine \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un Ens qui contient les coordonnées des murs constructibles trouvées à partir de l'ensemble des graines 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initalisée par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+
+{\itshape e\/} doit avoir été initialisée par \hyperlink{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{EnsAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Un ensemble a été alloué 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_abdf45d88543ba22c44470cea0d2a9b28}{
+\index{constructeur.h@{constructeur.h}!initEns\_\-seed@{initEns\_\-seed}}
+\index{initEns\_\-seed@{initEns\_\-seed}!constructeur.h@{constructeur.h}}
+\subsubsection[{initEns\_\-seed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} initEns\_\-seed (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_abdf45d88543ba22c44470cea0d2a9b28}
+Initialise l'ensemble des graines, et les construit dans {\itshape m\/} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un Ens qui contient les coordonnées des graines 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initialisé par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Les graines ont été construite dans {\itshape m\/}, un ensemble a été alloué 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ac9aa06d17dafec5fd67efc38aa7e9e4b}{
+\index{constructeur.h@{constructeur.h}!recherche\_\-seed\_\-mur\_\-constructible@{recherche\_\-seed\_\-mur\_\-constructible}}
+\index{recherche\_\-seed\_\-mur\_\-constructible@{recherche\_\-seed\_\-mur\_\-constructible}!constructeur.h@{constructeur.h}}
+\subsubsection[{recherche\_\-seed\_\-mur\_\-constructible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couple} recherche\_\-seed\_\-mur\_\-constructible (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrice}}]{m, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ac9aa06d17dafec5fd67efc38aa7e9e4b}
+Recherche la graine responsable d'une case constructible 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em m} & : Matrice, la matrice du labyrinthe \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, les coordonnées de la case constructible \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+les coordonnées de la graine responsable de la case constructible donnée en parametre 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape c\/} doit obligatoirement être constructible, c'est à dire ne pas avoir plusieurs mur déjà construits adjacents 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+{\itshape m\/} doit avoir été initialisé par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ad1774e83ad3d86615df41fa9860589ba}{
+\index{constructeur.h@{constructeur.h}!SupprMurPlusConstructible@{SupprMurPlusConstructible}}
+\index{SupprMurPlusConstructible@{SupprMurPlusConstructible}!constructeur.h@{constructeur.h}}
+\subsubsection[{SupprMurPlusConstructible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} SupprMurPlusConstructible (
+\begin{DoxyParamCaption}
+\item[{{\bf Couple}}]{c, }
+\item[{{\bf Ens}}]{emc, }
+\item[{{\bf Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ad1774e83ad3d86615df41fa9860589ba}
+Supprime de l'ensemble de mur constructible les cases autours d'un mur nouvellement construit, et les effaces(dessine en blanc) de l'affichage(si affichage activé) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, Coordonnées de mur nouvellement construit \\
+\hline
+\mbox{\tt in}  & {\em m} & : Matrice, matrice du labyrinthe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L'ensemble des murs constructibles 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape m\/} doit avoir été initalisée par \hyperlink{structStrMatrice_a413b83de8fe4333288b15d13e471e251}{MatAlloc()} 
+
+{\itshape emc\/} doit avoir été initialisée par \hyperlink{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{EnsAlloc()} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Les Couples autours de {\itshape c\/} ont été retirée de de {\itshape emc\/}, l'ensemble des murs constructibles 
+
+Efface les murs que l'on enlève de l'ensemble de l'affichage 
+\end{DoxyPostcond}
+\hypertarget{constructeur_8h_ac47e37ba1ea269435fe09f8906eac0d1}{
+\index{constructeur.h@{constructeur.h}!taillePixel@{taillePixel}}
+\index{taillePixel@{taillePixel}!constructeur.h@{constructeur.h}}
+\subsubsection[{taillePixel}]{\setlength{\rightskip}{0pt plus 5cm}int taillePixel (
+\begin{DoxyParamCaption}
+\item[{int}]{h, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}
+\label{constructeur_8h_ac47e37ba1ea269435fe09f8906eac0d1}
+Calcule un taille de pixel adequat en fonction de la hauteur et largeur de la matrice à afficher 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em l} & : entier, la largeur de la matrice à afficher \\
+\hline
+\mbox{\tt in}  & {\em h} & : entier, la hauteur de la matrice à afficher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un entier, la taille du pixel pour l'affichage de la matrice 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+l$>$0 
+
+h$>$0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}

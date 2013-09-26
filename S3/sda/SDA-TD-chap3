@@ -1,0 +1,24 @@
+Exo :
+Sur les piles(déductif), MQ hauteur(p)=hauteur(depiler(p))+1 pour p un terme tel que vide(p)=faux
+sur les files(inductif), mq lgr(f)=lgr(supt(f))+1 pour f non vide.
+
+Faire les exemples du cours aussi !
+
+Hauteur :
+On pose p = empiler(p',a)
+et en partant de hauteur(p)=hauteur(empiler(p',a))=(p4)=hauteur(p')+1=(p6)=hauteur(depiler(empiler(p',a)))+1=hauteur(depiler(p))+1
+
+longueur :
+Cas n=1 :
+f=adjq(filenouv,a1)
+(f4)=1+lgr(filenouv)
+(f6)=1+lgr(supt(adjq(filenouv)))
+=1+lgr(supt(f))
+
+Supposons k cas : cas n-1 vérifié :
+Cas général : lgr(f)=lgr(adj(.....,nh))
+(f4)=1+lgr(adq(adjq....,nh-1))
+=1+1+lgr(supt(f'))
+(f4)=1+lgr(adjq(supt(f'),an)
+(f3,f6)=1+lgr(supt(adjq(f',an)))
+=1+lgr(supt(f))

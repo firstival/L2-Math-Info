@@ -1,0 +1,19 @@
+main:
+real	0m2.811s
+user	0m2.810s
+sys	0m0.010s
+
+main2:
+real	0m0.038s
+user	0m0.040s
+sys	0m0.010s
+
+main3:
+real	0m0.858s
+user	0m0.860s
+sys	0m0.010s
+
+main4:
+real	0m0.039s
+user	0m0.030s
+sys	0m0.010s

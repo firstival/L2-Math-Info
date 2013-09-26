@@ -1,0 +1,100 @@
+listepointée comp(listec l1,listec l2)
+{
+	listepointée l={l1,l2};
+	return l;
+}
+
+listec debut(listepointée l) (lp1)
+{
+	return l.q1;
+}
+
+listec fin(listepointée l) (lp2)
+{
+	return l.q2;
+}
+
+S fenetre(listepointée l) (lp3)
+{
+	return (l.q2->suiv)->x;
+}
+
+listepointée ap(S x,listepointée l) (lp4)
+{
+	l.q2=at(x,l.q2);
+	return l;
+}
+
+listepointée sp(listepointée l) (lp5)
+{
+	l.q2=st(l.q2);
+	return l;
+}
+
+listepointée init(listepointée l) (lp6)
+{
+	while(l.q1 != NULL)
+	{
+		l.q2=at(queue(l.q1),l.q2);
+		l.q1=sq(l.q1);
+	}
+	return l;
+}
+
+listepointée term(listepointée l) (lp7)
+{
+	while(l.q2 != NULL)
+	{
+		l.q1=aq(tete(l.q2),l.q1);
+		l.q2=st(l.q2);
+	}
+	return l;
+}
+
+listepointée dcpd(listepointée l) (lp8)
+{
+	if(l.q2 != NULL)
+	{
+		l.q1=aq(tete(l.q2),l.q1);
+		l.q2=st(l.q2);
+	}
+	return l;
+}
+
+listepointée dcpg(listepointée l) (lp9)
+{
+	if(l.q1 != NULL)
+	{
+		l.q2=at(queue(l.q1),l.q2);
+		l.q1=sq(l.q1);
+	}
+	return l;
+}
+
+
+Théorème qui décrit:
+-1)ce que fait l'opérateur queue par rapport à l'aq
+-2)ce que fait la suppression de queue par rapport à aq
+-3)L'effet de at de st et de tete de l
+-4)l'effet de aq de sq de queue de l
+
+1) queue(aq(l,x))=x
+2) sq(aq(l,x))=l
+3)at(st(l),tete(l))=l
+4)aq(sq(l),queue(l))=l
+
+MQ dcpd(dcpg(l))=dcpg(dcpd(l))=l
+
+dcpd(dcpg(l))=dcpd(dcpg(comp(l1,l2)))
+	=dcpd(sq(l1),at(l2,queue(l1))
+	=comp(aq(sq(l1),tete(at(l2,queue(l1))),st(at(l2,queue(l1)))) (l5)
+	=comp(aq(sq(l1),queue(l1)),st(at(l2,queue(l1)))) ( 4) )
+	=comp(l1,st(at(l2,queue(l1)))) (l6)
+	=comp(l1,l2)
+
+dcpg(dcpd(l))=dcpg(dcpd(comp(l1,l2)))
+	=dcpg(aq(l1,tete(l2)),st(l2))
+	=comp(sq(aq(l1,tete(l2))),at(st(l2),queue(aq(l1,tete(l2)))) (l5)
+	=comp(aq(sq(l1),queue(l1)),st(at(l2,queue(l1)))) ( 4) )
+	=comp(l1,st(at(l2,queue(l1)))) (l6)
+	=comp(l1,l2)

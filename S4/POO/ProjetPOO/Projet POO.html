@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
+    <title>Projet POO</title>
+  </head>
+  <body>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=ISO-8859-1">
+    <p style="margin-bottom: 0cm"><br>
+    </p>
+    <p style="margin-bottom: 0cm; font-weight: normal;" align="CENTER"><font style="font-size: 20pt;" size="5">Projet de <br>
+        Programmation Orientée Objet</font></p>
+    <p style="margin-bottom: 0cm; font-weight: normal;" align="CENTER"><font style="font-size: 20pt;" size="5">2011-212<br>
+        <br>
+      </font></p>
+    <p style="margin-bottom: 0cm; font-weight: normal;" align="CENTER"><font style="font-size: 20pt;" size="5"><small><span style="font-style: italic;">Calcul symbolique d'expressions
+            arithmétiques</span></small><br>
+        <br>
+      </font></p>
+    <p style="margin-bottom: 0cm; font-weight: normal" align="CENTER"><font style="font-size: 20pt" size="5"><small><small>Ce projet doit
+            être réalisé en binôme.<br>
+            <br>
+          </small></small> </font></p>
+    <hr style="width: 100%; height: 2px;">
+    <p style="margin-bottom: 0cm">Description :</p>
+    <p style="margin-bottom: 0cm"><br>
+      Le projet consiste à proposer à l'utilisateur un
+      certain nombre d'opérations symboliques sur des <i>expressions
+        arithmétiques&nbsp;</i><span style="font-style: normal">avec
+
+        variables et constantes dont voici quelques exemples&nbsp;: </span>
+    </p>
+    <ul>
+      <li>
+        <p style="margin-bottom: 0cm; font-style: normal"><font face="Courier, monospace">(2*x^2+3*x+4)*(y+1)</font></p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; font-style: normal"><font face="Courier, monospace">cos(x)*sin(2*y)</font></p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; font-style: normal"><font face="Courier, monospace">a*x^2</font></p>
+      </li>
+    </ul>
+    <p style="margin-bottom: 0cm"><span style="font-style: normal">où
+
+      </span><font face="Courier, monospace"><span style="font-style:
+          normal">x</span></font><span style="font-style: normal">, </span><font face="Courier, monospace"><span style="font-style: normal">y</span></font><span style="font-style: normal"> sont des variables et </span><font face="Courier, monospace"><span style="font-style: normal">a</span></font><span style="font-style: normal"> est une constante.</span></p>
+    <p style="margin-bottom: 0cm">Le programme devra permettre&nbsp;: </p>
+    <ul>
+      <li>
+        <p style="margin-bottom: 0cm">de saisir une expression
+          arithmétique au clavier </p>
+        <p style="margin-bottom: 0cm"><i>(indication&nbsp;: Pour
+            simplifier l'analyse syntaxique de l'expression,
+            l'expression pourra être donnée en notation
+            polonaise inverse)</i>,</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm">d'afficher une expression
+          arithmétique </p>
+        <p style="margin-bottom: 0cm"><i>(indication&nbsp;: On pourra
+            tenir compte de la priorité des opérateurs
+            pour éviter d'afficher des parenthèse
+            inutiles)</i><span style="font-style: normal">,</span></p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm">d'évaluer une expression
+          arithmétique étant donnée une valeur pour
+          chaque variable </p>
+        <p style="margin-bottom: 0cm">(ex&nbsp;: pour <font face="Courier, monospace">x = 0</font> et <font face="Courier, monospace">y = 0</font>, l'expression <font face="Courier, monospace"><span style="font-style: normal">(2*x^2+3*x+4)*(y+1)</span></font><span style="font-style: normal"> vaut </span><font face="Courier, monospace"><span style="font-style: normal">4</span></font><span style="font-style: normal">)</span>,</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm">de calculer la
+          dérivée partielle par rapport à une
+          variable </p>
+        <p style="margin-bottom: 0cm">(ex&nbsp;: d(<font face="Courier,
+            monospace">x^2+y</font>)/d<font face="Courier, monospace">x</font>
+          = <font face="Courier, monospace">2*x</font>)</p>
+        <p style="margin-bottom: 0cm"><i>(indication&nbsp;: On devra
+            appliquer un certain nombre de règles de
+            réécriture qui traduisent des formes
+            générales de dérivation comme par
+            exemple, (uv)' = u'v+uv')</i>, </p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm">de simplifier une expression
+          arithmétique</p>
+        <p style="margin-bottom: 0cm">(ex&nbsp;: <font face="Courier,
+            monospace">(a*1+0*x)*(x)+(a*x)*(1)</font> &#8594; <font face="Courier, monospace">2*a*x</font>)</p>
+        <p style="margin-bottom: 0cm"><i>(indication&nbsp;: On utilisera
+            par exemple le fait que 0 est un élément
+            neutre pour l'addition, 1 est un élément
+            neutre pour la multiplication ... On pourra mettre
+            l'expression sous une forme canonique)</i>.</p>
+      </li>
+    </ul>
+    <p style="margin-bottom: 0cm">On pourra réaliser un programme
+      exécutable en mode console ou une applet offrant une
+      interface graphique.</p>
+    <br>
+    <hr style="width: 100%; height: 2px;">
+    <p style="margin-bottom: 0cm">Rendu&nbsp;:<br>
+      <br>
+    </p>
+    <ul>
+      <p style="margin-bottom: 0cm">On devra réaliser un rapport
+        dactylographié de quelques pages (10 maxi) comportant
+        notamment&nbsp;:</p>
+      <li>
+        <p style="margin-bottom: 0cm">une partie montrant comment
+          installer, compiler et exécuter le programme,</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm">un diagramme de classes<span style="font-style: normal"> pour présenter les
+            classes et leurs relations,</span></p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; font-style: normal">une
+          définition de la grammaire des expressions
+          arithmétiques considérées,</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm; font-style: normal">les
+          règles de dérivation et de simplification
+          utilisées,</p>
+      </li>
+      <li>
+        <p style="margin-bottom: 0cm;"><span style="font-style: normal">des
+
+
+            exemples</span> illustrant les possibilités de
+          l'outil.</p>
+      </li>
+    </ul>
+    <p><br>
+    </p>
+    <title></title>
+    <meta name="GENERATOR" content="LibreOffice 3.4 (Unix)">
+    <style type="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+	-->
+	</style>
+  
+
+</body></html>

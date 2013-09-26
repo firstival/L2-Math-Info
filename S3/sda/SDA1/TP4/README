@@ -1,0 +1,14 @@
+
+         TP 3. Structure de Données et Algorithmes
+       Polynômes creux et listes doublement chaînées
+
+1. Complétez le fichier ldc.c contenant les fonctions de manipulation de
+   listes doublement chaînées.
+
+2. Complétez le fichier poly.c contenant les fonctions de manipulation
+   de polynômes.
+
+3. Écrivez la fonction main() dans main.c, qui permet à l'utilisateur de
+   saisir deux polynômes, de calculer leur somme, leur produit, et leurs
+   dérivées, et d'afficher ces résultats.
+

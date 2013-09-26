@@ -1,0 +1,26 @@
+Explication du shell script de Pratique des Systèmes d'Exploitation
+
+Cas du top :
+-taper "top" re-affichera les 5 processus et fichiers/répertoire
+-taper "top N" avec N > 0, afficheras les N processus et fichiers/répertoire
+
+Cas du sort :
+il faut taper "sort" puis le type de tri que l'on veut :
+-cpu : pour trier selon le temps cpu
+-vsize : pour trier selon l'utilisation mémoire
+-prio : pour trier selon la priorité
+-starttime : pour trier selon la date de lancement du processus
+
+tout les tri se font de manière décroissantes obligatoirements.
+
+Cas du kill :
+il faut taper "kill PID" avec PID le pid du processus, pour tuer un processus (avec HUP,puis INT, puis KILL)
+
+Cas renice :
+taper "renice PID PRIO" pour renice le processus de pid PID avec la prio PRIO. (PRIO est soit compris entre 0 et 20, soit +1/-1)
+
+Cas cd :
+il suffit de taper "cd CHEMIN" avec CHEMIN un chemin d'accès relatif ou absolu.
+
+Cas quit :
+Et enfin, taper "quit" pour quitter le shell scritp

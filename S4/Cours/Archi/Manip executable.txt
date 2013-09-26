@@ -1,0 +1,58 @@
+Fichier source elf.c :
+
+/**************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int global_bss;
+int global_init=5;
+
+main() {
+int local = 18;
+char *str = "salut";
+str[2] = 'z';
+char *ptr = malloc(sizeof(char));
+
+printf("pid : %d\n", getpid());
+printf("global_bss : %p global_init : %p local : %p chaine : %p tas : %p\n", &global_bss, &global_init, &local, str, ptr);
+
+while(1) { sleep(300); }
+}
+
+/**************************************************/
+
+Manip :
+1. hexedit :
+    F1 : aide,
+    ctrl+x : sauver/quitter,
+    ctrl+c : quitter sans sauver,
+    PgUP/Down pour avancer/reculer d'une page)
+    ctrl+s : chercher/chercher suivant,
+    < : retour au début du fichier
+
+  Pour s’entraîner :
+- faire un fichier texte puis le sauver
+- montrer son contenu avec hexedit (24 octets par ligne)
+
+Maintenant avec l'exécutable elf
+2. entête (52 octets) :
+- strings --radix=x elf (montre les strings du pgm précédées de leur @ (--radix), vérifier avec hexedit)
+- readelf -h elf (-h header affiche l'entete)
+- changer le magic number (.ELF uniquement) avec hexedit puis lancer le pgm modifié
+
+3. sections :
+- readelf -S elf : 
+...
+[13] .text            PROGBITS        08048430 000430 00022c 00  AX  0  0 16
+...
+=> code commençant à l'adresse hexa 430 (X : section exécution)
+...
+[15] .rodata          PROGBITS        08048678 000678 00007b 00  A  0  0  4
+...
+=> read-only data (à l'adresse 678, montrer avec hexedit les chaines de caractères à cet endroit)
+
+- voir le code : objdump -d -j .text elf
+- modifier les instructions : hexedit elf
+ 
+3. Processus
+- lancer elf puis less /proc/num_pid/maps pour voir les segments

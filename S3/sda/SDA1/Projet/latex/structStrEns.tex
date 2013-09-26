@@ -1,0 +1,340 @@
+\hypertarget{structStrEns}{
+\section{StrEns Struct Reference}
+\label{structStrEns}\index{StrEns@{StrEns}}
+}
+
+
+{\ttfamily \#include $<$ensemble.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{EnsAlloc} ()
+\item 
+void \hyperlink{structStrEns_a2d30545135833c2bbdfe6c1e8b827c53}{EnsFree} (\hyperlink{structStrEns}{Ens} E)
+\item 
+int \hyperlink{structStrEns_a66bbbdad09f8ec02eb5271b8d87662d7}{EnsEstVide} (\hyperlink{structStrEns}{Ens} E)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{structStrEns_aecfa513ab23473ffa3089648439211b3}{EnsAjoute} (\hyperlink{structStrEns}{Ens} E, \hyperlink{structCouple}{Couple} c)
+\item 
+int \hyperlink{structStrEns_a5c371fe35905063264e488ef6ce83b50}{EnsRechercheCouple} (\hyperlink{structStrEns}{Ens} E, \hyperlink{structCouple}{Couple} c)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{structStrEns_ac906334f94a3034d3331176038e7be0d}{SupprIeme} (\hyperlink{structStrEns}{Ens} E, int i)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{structStrEns_a71f5e80ca6905dc7eae20914fd99e211}{EnsSuppr} (\hyperlink{structStrEns}{Ens} E, \hyperlink{structCouple}{Couple} c)
+\item 
+\hyperlink{structStrEns}{Ens} \hyperlink{structStrEns_a8d69db4d94d904a786b6b55e699548f3}{EnsSupprDernier} (\hyperlink{structStrEns}{Ens} E)
+\item 
+int \hyperlink{structStrEns_ae13b51eb0860fc024785b3f2cc6a2e6c}{EnsEstDans} (\hyperlink{structStrEns}{Ens} E, \hyperlink{structCouple}{Couple} c)
+\item 
+int \hyperlink{structStrEns_a24000b3f5c1551ba84495d216163804d}{EnsTaille} (\hyperlink{structStrEns}{Ens} E)
+\item 
+\hyperlink{structCouple}{Couple} \hyperlink{structStrEns_a4e8e89b7b3814c232c2e1df27b8faf4d}{EnsTirage} (\hyperlink{structStrEns}{Ens} E)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structCouple}{pCouple} \hyperlink{structStrEns_a277698b3d4fd4e80c67a5d2119e71f7d}{tab}
+\item 
+int \hyperlink{structStrEns_aea990e111124d6bcbe1d5a17e1037854}{taille}
+\item 
+int \hyperlink{structStrEns_ad5f649f203ec7978215f8093286eca38}{taillemax}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure ensemble 
+
+\subsection{Member Function Documentation}
+\hypertarget{structStrEns_aecfa513ab23473ffa3089648439211b3}{
+\index{StrEns@{StrEns}!EnsAjoute@{EnsAjoute}}
+\index{EnsAjoute@{EnsAjoute}!StrEns@{StrEns}}
+\subsubsection[{EnsAjoute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} EnsAjoute (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_aecfa513ab23473ffa3089648439211b3}
+Ajoute un couple à l'ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, un ensemble \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, le couple à ajouter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un ensemble dont on a ajouté {\itshape c\/} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Si il n'y avait plus assez de place dans l'ensemble, on a alloué un nouveau tableau de taille taillemax+MAXENS 
+
+on a ajouté un élément à l'ensemble 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}{
+\index{StrEns@{StrEns}!EnsAlloc@{EnsAlloc}}
+\index{EnsAlloc@{EnsAlloc}!StrEns@{StrEns}}
+\subsubsection[{EnsAlloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} EnsAlloc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a5431a78349672ade3c4f8d2e28b501bc}
+Alloue un ensemble \begin{DoxyReturn}{Returns}
+un Ens, pointeur sur l'ensemble alloué 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+un \hyperlink{structStrEns}{StrEns} a été alloué en mémoire 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_ae13b51eb0860fc024785b3f2cc6a2e6c}{
+\index{StrEns@{StrEns}!EnsEstDans@{EnsEstDans}}
+\index{EnsEstDans@{EnsEstDans}!StrEns@{StrEns}}
+\subsubsection[{EnsEstDans}]{\setlength{\rightskip}{0pt plus 5cm}int EnsEstDans (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_ae13b51eb0860fc024785b3f2cc6a2e6c}
+Teste si un \hyperlink{structCouple}{Couple} appartient à l'ensemble passé en paramètre 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, l'ensemble que l'on va testé \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, le couple que l'on va chercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si {\itshape c\/} est dans E, 0 sinon 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} !=NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a66bbbdad09f8ec02eb5271b8d87662d7}{
+\index{StrEns@{StrEns}!EnsEstVide@{EnsEstVide}}
+\index{EnsEstVide@{EnsEstVide}!StrEns@{StrEns}}
+\subsubsection[{EnsEstVide}]{\setlength{\rightskip}{0pt plus 5cm}int EnsEstVide (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a66bbbdad09f8ec02eb5271b8d87662d7}
+Test de vacuité sur {\itshape E\/} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E,:} & Ens, un pointeur sur un ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si l'ensemble est vide, 1 sinon 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a2d30545135833c2bbdfe6c1e8b827c53}{
+\index{StrEns@{StrEns}!EnsFree@{EnsFree}}
+\index{EnsFree@{EnsFree}!StrEns@{StrEns}}
+\subsubsection[{EnsFree}]{\setlength{\rightskip}{0pt plus 5cm}void EnsFree (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a2d30545135833c2bbdfe6c1e8b827c53}
+Désalloue un ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, un pointeur sur un \hyperlink{structStrEns}{StrEns} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+l'ensemble pointé par E ne doit plus être utilisé, car {\itshape E\/} a été désalloué 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a5c371fe35905063264e488ef6ce83b50}{
+\index{StrEns@{StrEns}!EnsRechercheCouple@{EnsRechercheCouple}}
+\index{EnsRechercheCouple@{EnsRechercheCouple}!StrEns@{StrEns}}
+\subsubsection[{EnsRechercheCouple}]{\setlength{\rightskip}{0pt plus 5cm}int EnsRechercheCouple (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a5c371fe35905063264e488ef6ce83b50}
+Recherche un \hyperlink{structCouple}{Couple} dans un ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, l'ensemble dans lequel on doit chercher le couple \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, le \hyperlink{structCouple}{Couple} à chercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 si le \hyperlink{structCouple}{Couple} n'est pas présent dans l'ensemble, la place de ce \hyperlink{structCouple}{Couple} dans le tableau de l'ensemble sinon 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a71f5e80ca6905dc7eae20914fd99e211}{
+\index{StrEns@{StrEns}!EnsSuppr@{EnsSuppr}}
+\index{EnsSuppr@{EnsSuppr}!StrEns@{StrEns}}
+\subsubsection[{EnsSuppr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} EnsSuppr (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E, }
+\item[{{\bf Couple}}]{c}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a71f5e80ca6905dc7eae20914fd99e211}
+Supprime de l'ensemble le \hyperlink{structCouple}{Couple} passé en argument 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, l'ensemble dans lequel on va supprimer le couple \\
+\hline
+\mbox{\tt in}  & {\em c} & : \hyperlink{structCouple}{Couple}, le \hyperlink{structCouple}{Couple} à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L'ensemble dans lequel on a supprimé {\itshape c\/} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Si {\itshape c\/} était dans {\itshape E\/}, alors il est supprimé de l'ensemble 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a8d69db4d94d904a786b6b55e699548f3}{
+\index{StrEns@{StrEns}!EnsSupprDernier@{EnsSupprDernier}}
+\index{EnsSupprDernier@{EnsSupprDernier}!StrEns@{StrEns}}
+\subsubsection[{EnsSupprDernier}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} EnsSupprDernier (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a8d69db4d94d904a786b6b55e699548f3}
+Supprime le dernier élément de l'ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, l'ensemble dont on va supprimer le dernier élément \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L'ensemble dont on a supprimé le dernier élément 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} !=NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+La taille de {\itshape E\/} a été réduite de 1 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a24000b3f5c1551ba84495d216163804d}{
+\index{StrEns@{StrEns}!EnsTaille@{EnsTaille}}
+\index{EnsTaille@{EnsTaille}!StrEns@{StrEns}}
+\subsubsection[{EnsTaille}]{\setlength{\rightskip}{0pt plus 5cm}int EnsTaille (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a24000b3f5c1551ba84495d216163804d}
+Donne le nombre d'élément dans l'ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la taille de l'ensemble 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+
+\end{DoxyPostcond}
+\hypertarget{structStrEns_a4e8e89b7b3814c232c2e1df27b8faf4d}{
+\index{StrEns@{StrEns}!EnsTirage@{EnsTirage}}
+\index{EnsTirage@{EnsTirage}!StrEns@{StrEns}}
+\subsubsection[{EnsTirage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couple} EnsTirage (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_a4e8e89b7b3814c232c2e1df27b8faf4d}
+Tire un couple aléatoirement dans l'ensemble, le retire de l'ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le \hyperlink{structCouple}{Couple} tiré par la fonction 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+le couple tiré supprimé de l'ensemble 
+\end{DoxyPostcond}
+\hypertarget{structStrEns_ac906334f94a3034d3331176038e7be0d}{
+\index{StrEns@{StrEns}!SupprIeme@{SupprIeme}}
+\index{SupprIeme@{SupprIeme}!StrEns@{StrEns}}
+\subsubsection[{SupprIeme}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ens} SupprIeme (
+\begin{DoxyParamCaption}
+\item[{{\bf Ens}}]{E, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{structStrEns_ac906334f94a3034d3331176038e7be0d}
+Suprimme le ième élément de l'ensemble 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em E} & : Ens, l'ensemble dans lequel on doit supprimer l'élément \\
+\hline
+\mbox{\tt in}  & {\em i} & : int, l'indice de l'élément à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+l'ensemble dans lequel on a supprimé le ième élément 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+{\itshape E\/} != NULL 
+
+0$<$= i $<$ E.taille 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+l'élément à l'indice (E.Taille-\/1) a été mis à la place du ième élément 
+
+la taille de l'ensemble à été réduite de 1 
+\end{DoxyPostcond}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structStrEns_a277698b3d4fd4e80c67a5d2119e71f7d}{
+\index{StrEns@{StrEns}!tab@{tab}}
+\index{tab@{tab}!StrEns@{StrEns}}
+\subsubsection[{tab}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pCouple} {\bf StrEns::tab}}}
+\label{structStrEns_a277698b3d4fd4e80c67a5d2119e71f7d}
+pointeur pour un tableau de \hyperlink{structCouple}{Couple} \hypertarget{structStrEns_aea990e111124d6bcbe1d5a17e1037854}{
+\index{StrEns@{StrEns}!taille@{taille}}
+\index{taille@{taille}!StrEns@{StrEns}}
+\subsubsection[{taille}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf StrEns::taille}}}
+\label{structStrEns_aea990e111124d6bcbe1d5a17e1037854}
+Nombre d'élément dans l'ensemble \hypertarget{structStrEns_ad5f649f203ec7978215f8093286eca38}{
+\index{StrEns@{StrEns}!taillemax@{taillemax}}
+\index{taillemax@{taillemax}!StrEns@{StrEns}}
+\subsubsection[{taillemax}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf StrEns::taillemax}}}
+\label{structStrEns_ad5f649f203ec7978215f8093286eca38}
+taille maximum de l'ensemble 
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ensemble_8h}{ensemble.h}\end{DoxyCompactItemize}

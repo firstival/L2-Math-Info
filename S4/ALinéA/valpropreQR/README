@@ -1,0 +1,29 @@
+Compilation : Il suffit de taper 'make' dans la console en étant dans le répertoire du TP
+
+
+
+Utilisation :
+-valpropreQR : permet de chercher les valeurs propres d'une matrice, le programme vous invitera à entrer une matrice, puis cherchera les valeurs propres et les afficheras, en plus du nombre d'itération dont il a eu besoin
+-valpropreGNUplot:
+Argument : <taille de la matrice> <nom du fichier dans lequel le programme va ecrire>
+Ce programme va aléatoirement chercher une matrice de la taille indiqué, et essayer de chercher ses valeurs propres.
+Si le nombre d'itération dépasse le nombre maximum convenu (define dans valeur_propre.h), le programme va générer une autre matrice aléatoire jusqu'à en trouver une qui a des valeurs propres réelles.
+Le programme va écrire dans le fichier du nom indiqué (attention si un fichier du même nom exite déjà, il sera écrasé) les matrices obtenus durant les différentes itérations (toutes les N itérations seulement, define dans valeur_propre.h).
+
+
+
+Pour avoir un affichage gnuplot :
+Après avoir générer un fichier avec valpropreGNUplot, il faut créer un autre fichier avec le script GenererFichier.sh (script shell).
+Ce script prend 2 arguments : <nom du fichier contenant les matrices, généré par valpropreGNUplot> <nom du fichier que le script va générer>
+
+Ensuite, il suffit de lancer gnuplot, et faire "load 'le nom du fichier généré par GenererFichier.sh'.
+La fenetre d'affichage de gnuplot s'ouvrira. Pour avancer dans les itérations, vous devez avec le terminal lançant gnuplot sélectionner, et taper sur la touche "Entrée" pour faire défiler l'affichages des différentes matrices.
+
+
+Je vous donne plusieurs fichiers qui ont été déjà généré par valpopreGNUplot : matrice_5x5/6x6/7x7/8x8, et gnuplot_8x8 est le fichier généré par le script avec matrice_8x8.
+Je suis désolé, je sais que 8x8 est une taille dérisoire comparé au 50x50 ou 100x100 que vous demandiez, mais j'ai laissé tourner plusieurs ordinnateur pendant 10/15h d'affiler, et ceci sont les seuls tailles dont le programmes a pu trouver une matrice ayant des valeurs propres réelles.
+Je ne sais pas si c'est mon programme, si il lui manque quelques choses, car j'ai respecté la marche à suivre, je ne savais pas quoi faire d'autre. Si vous voulez, vous pouvez essayez de générer un fichier (je vous souhaite plus de chance que je n'en ai eu).
+Il suffit après d'utiliser le script comme indiqué au dessus.
+
+
+Thomas Kuntz
